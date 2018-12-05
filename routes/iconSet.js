@@ -23,7 +23,6 @@ router.get('/addList', (req, res, next) => {
   // //解析请求参数
   let params = URL.parse(req.url, true).query;
   let addSqlParams = [params.name || '', params.tag || '', params.classify || '', params.def || '', params.two_mul || '', params.three_mul || ''];
-  
   //增
   connection.query(addSql, addSqlParams, (err, result) => {
     if (err) {
