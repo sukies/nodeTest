@@ -1,3 +1,9 @@
+## 启动数据库
+
+```
+mysql -u root -p
+```
+
 ## 数据库格式
 
 iconList
