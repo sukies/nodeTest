@@ -102,7 +102,7 @@ connection.query(addSql, addSqlParams, (err, result) => {
 });
 ```
 
- <a href='../routers/iconSet.js'>完整代码</a>
+ <a href='../routes/iconSet.js'>完整代码</a>
 实现后可在浏览器输入http://localhost:3000/iconSet/addList?name=ceshi&two_mul=htt验证
 
 ## 其他
