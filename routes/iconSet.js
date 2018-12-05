@@ -8,29 +8,29 @@ var connection = mysql.createConnection({
   user     : 'root',
   password : '123456',
   port: '3306',
-  database: 'test'
+  database: 'icon'
 });
 
 connection.connect();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  
-  var  sql = 'SELECT * FROM websites';
-//查
-  connection.query(sql,function (err, result) {
-    if(err){
-      console.log('[SELECT ERROR] - ',err.message);
-      return;
-    }
-    
-    console.log('--------------------------SELECT----------------------------');
-    console.log(result);
-    console.log('------------------------------------------------------------\n\n');
-  });
-  
-  connection.end();
-  console.log(111111);
+  //SQL语句
+  // var  sql = 'SELECT * FROM name';
+  // var  addSql = 'INSERT INTO name(id,name,sex) VALUES(?,?,?)';
+  //
+  // //解析请求参数
+  // var params = URL.parse(req.url, true).query;
+  // var addSqlParams = [params.id, params.name, params.sex];
+  //
+  //
+  // //增
+  // connection.query(addSql,addSqlParams,function (err, result) {
+  //   if(err){
+  //     console.log('[INSERT ERROR] - ',err.message);
+  //     return;
+  //   }
+  // });
   res.send('respond with a resource');
 });
 
