@@ -45,9 +45,9 @@ CREATE TABLE IF NOT EXISTS `icon_list`(
 插入数据
 ```sql
 INSERT INTO icon_list
-  -> (id, name, tag,classify,double,three)
+  -> ( name, tag,classify,default,double,three)
   -> VALUES
-  -> (0, "扫码成功icon", "",-1,"","https://assets.2dfire.com/frontend/38118d30f50a0f7b898c2c997b3556ff.png","https://assets.2dfire.com/frontend/4f313a07ab1e8dc9175cb4fb3266e0e4.png");
+  -> ( "扫码成功icon", "","-1","","https://assets.2dfire.com/frontend/38118d30f50a0f7b898c2c997b3556ff.png","https://assets.2dfire.com/frontend/4f313a07ab1e8dc9175cb4fb3266e0e4.png");
 ```
 
 
@@ -58,6 +58,12 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER; //
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; //(更新用户密码 )
 
 FLUSH PRIVILEGES; //刷新权限（不输入也可以）
+```
+
+
+### 修改数据类型
+```
+alter table 表名 modify 字段名 数据类型
 ```
 
 ### node 连接数据库
