@@ -56,3 +56,23 @@ FLUSH PRIVILEGES; //刷新权限（不输入也可以）
 ```sql
 ALTER TABLE  icon_list  CHANGE `default` `def` varchar(100)
 ```
+
+## 创建classify
+
+```sql
+CREATE TABLE IF NOT EXISTS `classify`(
+  `id` INT UNSIGNED AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `parent_id` INT,
+  PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+插入数据
+```sql
+INSERT INTO classify
+  -> ( name,parent_id)
+  -> VALUES
+  -> ( "测试",0);
+  INSERT INTO classify (name,parent_id) VALUES ("测试11",1);
+```

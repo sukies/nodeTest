@@ -14,30 +14,46 @@ connection.connect();
 
 
 //SQL语句
-let sql = 'SELECT * FROM icon_list';
-let addSql = 'INSERT INTO icon_list (name,tag,classify,def,two_mul,three_mul) VALUES (?,?,?,?,?,?)';
+let search = 'SELECT * FROM icon_list';
+let addIcon = 'INSERT INTO icon_list (name,tag,classify,def,two_mul,three_mul) VALUES (?,?,?,?,?,?)';
 
 
-/* GET users listing. */
+/** GET users listing. */
+
+
 router.get('/addList', (req, res, next) => {
-  // //解析请求参数
   let params = URL.parse(req.url, true).query;
   let addSqlParams = [params.name || '', params.tag || '', params.classify || '', params.def || '', params.two_mul || '', params.three_mul || ''];
-  //增
-  connection.query(addSql, addSqlParams, (err, result) => {
+  connection.query(addIcon, addSqlParams, (err, result) => {
     if (err) {
       console.log('[INSERT ERROR] - ', err.message);
       return;
     }
   });
-  //查
-  connection.query(sql, (err, result) => {
+  connection.query(search, (err, result) => {
     if (err) {
       console.log('[SELECT ERROR] - ', err.message);
       return;
     }
-    //把搜索值输出
-    res.send(result);
+    res.send({
+      code:1,
+      data:result
+    });
+  });
+});
+
+router.get('/search', (req, res, next) => {
+  let params = URL.parse(req.url, true).query;
+  
+  connection.query(search, (err, result) => {
+    if (err) {
+      console.log('[SELECT ERROR] - ', err.message);
+      return;
+    }
+    res.send({
+      code:1,
+      data:result
+    });
   });
 });
 
