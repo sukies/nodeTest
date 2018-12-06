@@ -59,6 +59,12 @@ ALTER TABLE  icon_list  CHANGE `default` `def` varchar(100)
 
 ## 创建classify
 
+| Field     | Type             | Null | Key | Default | Extra          |
+|-----------|------------------|------|-----|---------|----------------|
+| id        | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name      | varchar(100)     | NO   |     | NULL    |                |
+| parent_id | int(11)          | YES  |     | NULL    |                |
+
 ```sql
 CREATE TABLE IF NOT EXISTS `classify`(
   `id` INT UNSIGNED AUTO_INCREMENT,

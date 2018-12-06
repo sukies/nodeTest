@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="728c37a5-6759-4a3a-8274-2e9a92df13c9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/mysql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/iconSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/iconSet.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,8 +37,8 @@
       <file leaf-file-name="mysql.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/doc/mysql.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="76" column="2" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="55" />
+            <state relative-caret-position="363">
+              <caret line="62" column="72" lean-forward="true" selection-start-line="62" selection-start-column="72" selection-end-line="62" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -230,7 +227,7 @@
       <workItem from="1543914946996" duration="831000" />
       <workItem from="1543915801160" duration="1329000" />
       <workItem from="1543976518144" duration="17123000" />
-      <workItem from="1544060521716" duration="4746000" />
+      <workItem from="1544060521716" duration="5031000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1543916223781</created>
@@ -271,20 +268,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24029000" />
+    <option name="totallyTimeSpent" value="24314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="433" y="1" width="1490" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1584022" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1584022" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3292683" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3292683" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -501,8 +498,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/mysql.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="76" column="2" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="55" />
+        <state relative-caret-position="363">
+          <caret line="62" column="72" lean-forward="true" selection-start-line="62" selection-start-column="72" selection-end-line="62" selection-end-column="72" />
         </state>
       </provider>
     </entry>
