@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>巨型画布</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            cursor: move;
+        }
+        .canvasSmall {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-flex-flow: column;
+            -ms-flex-flow: column;
+            flex-flow: column;
+        }
+        .wrapper {
+            -webkit-flex: 0;
+            -moz-flex: 0;
+            flex: 0;
+        }
+        button,#canvasDemo{
+            vertical-align: top;
+            /*display: block;*/
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="768">
+    您的浏览器不支持canvas
+</canvas>
+<div class="canvasSmall" style="background: rgba(0,0,0,.4)">
+    <div class="wrapper">
+        <canvas id="canvasSmall"></canvas>
+    </div>
+</div>
+<button id="button">添加圆点</button>
+<canvas id="canvasDemo"></canvas>
+<script type="text/javascript" defer="defer">
+    (function () {
+        //定义图片，canvas显示的大小
+        var setting = {
+            url: 'bg.png',
+            width: 1024,
+            height: 768,
+            canvasSmall: 'canvasSmall',
+            canvasSmallWidth: 200,
+            btn: 'button',
+            btnStatus: 0,//0为不编辑状态，1为编辑状态
+            canvasDemo: 'canvasDemo'
+        };
+        var circle = [];
+        document.getElementById(setting.btn).addEventListener('click', function (e) {
+            if (setting.btnStatus == 0) {
+                setting.btnStatus = 1;
+                document.getElementById(setting.btn).innerText='编辑完成';
+            } else {
+                setting.btnStatus = 0;
+                document.getElementById(setting.btn).innerText='添加圆点';
+            }
+        });
+        var canvas = {
+            canvas: document.getElementById("canvas"),
+            cxt: this.canvas.getContext('2d'),
+            canvasDemo: document.getElementById(setting.canvasDemo),
+            demoCxt: this.canvasDemo.getContext('2d'),
+            img: new Image(),
+            //canvas剪裁的起点坐标
+            x: 0,
+            y: 0
+        };
+        var mouseChange = {
+            //起始坐标
+            start: {},
+            //结束坐标
+            end: {},
+            //新的起始位置
+            new: {}
+        };
+//        编辑时绘制
+        var editDrew = function () {
+            canvas.cxt.clearRect(0, 0, setting.width, setting.height);
+            canvas.cxt.drawImage(canvas.img, -canvas.x, -canvas.y);
+            var content = {
+                x: mouseChange.start.x,
+                y: mouseChange.start.y,
+                outerX: mouseChange.start.x + canvas.x,
+                outerY: mouseChange.start.y + canvas.y
+            };
+            circle.push(content);
+            canvas.cxt.strokeStyle='red';
+            canvas.cxt.fillStyle='red';
+            canvas.demoCxt.strokeStyle='red';
+            canvas.demoCxt.fillStyle='red';
+            for (var i = 0, leg = circle.length; i < leg; i++) {
+                //当前画布
+                canvas.cxt.beginPath();
+                canvas.cxt.arc(circle[i].outerX - canvas.x, circle[i].outerY - canvas.y, 10, 0, 2 * Math.PI);
+                canvas.cxt.fill();
+                canvas.cxt.stroke();
+                //预览图
+                canvas.demoCxt.beginPath();
+                canvas.demoCxt.arc((circle[i].outerX * canvas.scale), (circle[i].outerY * canvas.scale), 10 * canvas.scale, 0, 2 * Math.PI);
+                canvas.cxt.fill();
+                canvas.demoCxt.stroke();
+            }
+        };
+        function loadImage() {
+            canvas.img.src = setting.url;
+            // 图片存在缓存中
+            if (canvas.img.complete) {
+                canvas.imgWidth = canvas.img.naturalWidth;
+                canvas.imgHeight = canvas.img.naturalHeight;
+                drew();
+                return false;
+            }
+            // 图片加载到浏览器的缓存中回调函数
+            canvas.img.onload = function () {
+                canvas.imgWidth = canvas.img.naturalWidth;
+                canvas.imgHeight = canvas.img.naturalHeight;
+                drew();
+            }
+        }
+//        绘制
+        var drew = function (x, y) {
+            //拖动后事件
+            if (!!x && !!y) {
+                mouseChange.x = mouseChange.start.x - mouseChange.end.x;
+                mouseChange.y = mouseChange.start.y - mouseChange.end.y;
+                //判断位移是否超过5px
+                if (mouseChange.x * mouseChange.x + mouseChange.y * mouseChange.y <= 25) {
+//                    如果在编辑状态下
+                    return false
+                }
+                canvas.x = this.changeNum('x');
+                canvas.y = this.changeNum('y');
+            }
+            canvas.cxt.clearRect(0, 0, setting.width, setting.height);
+            canvas.cxt.drawImage(canvas.img, -canvas.x, -canvas.y);
+            canvasSmall();
+//            editDrew();
+            //获取canvas剪裁的起点坐标
+            this.changeNum = function (z) {
+                var changeN;
+                mouseChange.new[z] = canvas[z] + mouseChange[z];
+                //在0-（最大距离-屏幕宽度）中间的时候
+                if ((0 <= mouseChange.new[z] ) && (mouseChange.new[z] <= (canvas[z == 'x' ? 'imgWidth' : 'imgHeight'] - setting[z == 'x' ? 'width' : 'height']))) {
+                    changeN = mouseChange.new[z];
+                } else if (0 > mouseChange.new[z]) {
+                    changeN = 0;
+                } else if (mouseChange.new[z] > (canvas[z == 'x' ? 'imgWidth' : 'imgHeight'] - setting[z == 'x' ? 'width' : 'height'])) {
+                    changeN = canvas[z == 'x' ? 'imgWidth' : 'imgHeight'] - setting[z == 'x' ? 'width' : 'height'];
+                }
+                return changeN;
+            };
+        };
+        //demo
+        var demoDrew = function () {
+            for (var i = 0, leg = circle.length; i < leg; i++) {
+                canvas.cxt.strokeStyle='red';
+                canvas.demoCxt.strokeStyle='red';
+                //画布
+                canvas.cxt.beginPath();
+                canvas.cxt.arc((circle[i].outerX - canvas.x), (circle[i].outerY - canvas.y), 10, 0, 2 * Math.PI);
+                canvas.cxt.fill();
+                canvas.cxt.stroke();
+                //预览图
+                canvas.demoCxt.beginPath();
+                canvas.demoCxt.arc((circle[i].outerX * canvas.scale), (circle[i].outerY * canvas.scale), 10 * canvas.scale, 0, 2 * Math.PI);
+                canvas.cxt.fill();
+                canvas.demoCxt.stroke();
+            }
+        };
+        //        缩略图
+        var canvasSmall = function (x, y) {
+            var canvasSmall = document.getElementById(setting.canvasSmall);
+            var ctxSmall = canvasSmall.getContext('2d');
+            var img = {};
+            var width = setting.canvasSmallWidth;
+//            如果宽度大于高度
+            if (canvas.imgWidth >= canvas.imgHeight) {
+                img.left = 0;
+                img.top = (200 - img.height) / 2;
+            } else {
+                img.left = (200 - img.width) / 2;
+                img.top = 0;
+            }
+            img.height = setting.canvasSmallWidth * canvas.imgHeight / canvas.imgWidth;
+            img.width = setting.canvasSmallWidth;
+            canvasSmall.setAttribute('width', width);
+            canvasSmall.setAttribute('height', img.height);
+            canvas.canvasDemo.setAttribute('width', width);
+            canvas.canvasDemo.setAttribute('height', img.height);
+//            绘制
+            var drew = function () {
+                var scale = img.width / canvas.imgWidth;
+                var rect = {
+                    width: scale * setting.width,
+                    height: scale * setting.height
+                };
+                canvas.scale = scale;
+                ctxSmall.drawImage(canvas.img, 0, 0, canvas.imgWidth, canvas.imgHeight, 0, 0, img.width, img.height);
+                canvas.demoCxt.drawImage(canvas.img, 0, 0, canvas.imgWidth, canvas.imgHeight, 0, 0, img.width, img.height);
+                demoDrew();
+                ctxSmall.beginPath();
+                ctxSmall.lineWidth = '1';
+                ctxSmall.strokeStyle = 'red';
+                ctxSmall.rect(canvas.x * scale, canvas.y * scale, rect.width, rect.height);
+                ctxSmall.stroke();
+            };
+            drew();
+        };
+//        canvasSmall();
+//        获取鼠标点击点的坐标
+        function getMousePos(canvas, evt) {
+            var rect = canvas.getBoundingClientRect();
+            return {
+                x: evt.clientX - rect.left,
+                y: evt.clientY - rect.top
+            };
+        }
+        //点击时事件
+        canvas.canvas.addEventListener('mousedown', function (e) {
+            var even = e || window.event;
+            mouseChange.start = getMousePos(canvas.canvas, even);
+        });
+        //鼠标松开事件
+        canvas.canvas.addEventListener('mouseup', function (e) {
+            //                    如果在编辑状态下
+            if (setting.btnStatus == 1) {
+                editDrew();
+                demoDrew();
+            } else {
+                var even = e || window.event;
+                mouseChange.end = getMousePos(canvas.canvas, even);
+                drew(mouseChange.end.x, mouseChange.end.y);
+            }
+        });
+        loadImage();
+    })();
+</script>
+</body>
+</html>

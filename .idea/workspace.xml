@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="728c37a5-6759-4a3a-8274-2e9a92df13c9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/front/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/giantCanvas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/IconList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/IconSet.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/ImgCanvas.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/units/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/units/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/units/imageCompress/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/units/imageCompress/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/views/AddIcon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/views/Edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/views/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/views/Upload.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/iconSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/iconSet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,19 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/index.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
+            <state relative-caret-position="2128">
               <caret line="112" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
@@ -38,8 +54,8 @@
       <file leaf-file-name="mysql.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/mysql.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="68" column="36" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="36" />
+            <state relative-caret-position="323">
+              <caret line="65" column="11" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -53,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.pug" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -80,11 +96,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iconSet.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="iconSet.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/iconSet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+            <state relative-caret-position="213">
+              <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -102,12 +127,19 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -129,7 +161,9 @@
         <option value="$PROJECT_DIR$/doc/index.md" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/doc/mysql.md" />
+        <option value="$PROJECT_DIR$/test/test.html" />
         <option value="$PROJECT_DIR$/routes/iconSet.js" />
+        <option value="$PROJECT_DIR$/views/index.pug" />
       </list>
     </option>
   </component>
@@ -164,12 +198,13 @@
             <path>
               <item name="nodeTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodeTest" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodeTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodeTest" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodeTest" type="b2602c69:ProjectViewProjectNode" />
@@ -188,6 +223,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -200,6 +236,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\learn\nodeTest\front" />
       <recent name="D:\learn\nodeTest" />
     </key>
   </component>
@@ -230,7 +267,8 @@
       <workItem from="1543976518144" duration="17123000" />
       <workItem from="1544060521716" duration="5654000" />
       <workItem from="1544176625594" duration="6000" />
-      <workItem from="1544685274799" duration="5520000" />
+      <workItem from="1544685274799" duration="6873000" />
+      <workItem from="1544753557606" duration="4913000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1543916223781</created>
@@ -271,22 +309,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30463000" />
+    <option name="totallyTimeSpent" value="36729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="432" y="6" width="1490" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1584022" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1584022" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3292683" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3292683" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -310,6 +348,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="aa" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/routes/iconSet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1235">
+          <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -583,20 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
@@ -621,28 +652,56 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
+        <state relative-caret-position="2128">
           <caret line="112" selection-start-line="112" selection-end-line="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/mysql.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="68" column="36" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="36" />
+        <state relative-caret-position="323">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/iconSet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        <state relative-caret-position="213">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
         </state>
       </provider>
     </entry>
