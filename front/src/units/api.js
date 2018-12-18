@@ -1,6 +1,6 @@
 import axios from './axios'
 /**
- * 获取二维码值
+ * 搜索
  */
 export const search = (params) => {
   return axios({
@@ -12,12 +12,23 @@ export const search = (params) => {
 }
 
 /**
- * 获取二维码值
+ * 获取分类内容
  */
 export const getClassify = (params) => {
     return axios({
         method: 'get',
         url:'/iconSet/getClassify',
+        params: params,
+        withCredentials: false
+    })
+}
+/**
+ * 添加图片
+ */
+export const addIcon = (params) => {
+    return axios({
+        method: 'get',
+        url:'/iconSet/addIcon',
         params: params,
         withCredentials: false
     })

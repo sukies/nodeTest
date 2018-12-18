@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!--<div id="nav">-->
-      <!--<router-link to="/">Home</router-link> |-->
-      <!--<router-link to="/about">About</router-link>-->
+    <!--<router-link to="/">Home</router-link> |-->
+    <!--<router-link to="/about">About</router-link>-->
     <!--</div>-->
     <div class="layout">
       <Layout>
@@ -37,12 +37,62 @@
             </div>
           </Menu>
         </Header>
+        <!--<Layout class="content">-->
+          <!--<Layout class="content-wrapper">-->
+            <!--<Sider hide-trigger :style="{ background: '#fff' }">-->
+              <!--<Menu-->
+                <!--active-name="1-2"-->
+                <!--theme="light"-->
+                <!--width="auto"-->
+                <!--:open-names="['1']"-->
+              <!--&gt;-->
+                <!--<Submenu name="1">-->
+                  <!--<template slot="title">-->
+                    <!--<Icon type="ios-navigate"></Icon>-->
+                    <!--Item 1-->
+                  <!--</template>-->
+                  <!--<MenuItem name="1-1">Option 1</MenuItem>-->
+                  <!--<MenuItem name="1-2">Option 2</MenuItem>-->
+                  <!--<MenuItem name="1-3">Option 3</MenuItem>-->
+                <!--</Submenu>-->
+                <!--<Submenu name="2">-->
+                  <!--<template slot="title">-->
+                    <!--<Icon type="ios-keypad"></Icon>-->
+                    <!--Item 2-->
+                  <!--</template>-->
+                  <!--<MenuItem name="2-1">Option 1</MenuItem>-->
+                  <!--<MenuItem name="2-2">Option 2</MenuItem>-->
+                <!--</Submenu>-->
+                <!--<Submenu name="3">-->
+                  <!--<template slot="title">-->
+                    <!--<Icon type="ios-analytics"></Icon>-->
+                    <!--Item 3-->
+                  <!--</template>-->
+                  <!--<MenuItem name="3-1">Option 1</MenuItem>-->
+                  <!--<MenuItem name="3-2">Option 2</MenuItem>-->
+                <!--</Submenu>-->
+              <!--</Menu>-->
+            <!--</Sider>-->
+            <!--<Layout :style="{ padding: '0 24px 24px' }" class="main">-->
+              <!--&lt;!&ndash;<Breadcrumb :style="{ margin: '24px 0' }">&ndash;&gt;-->
+                <!--&lt;!&ndash;<BreadcrumbItem>Home</BreadcrumbItem>&ndash;&gt;-->
+                <!--&lt;!&ndash;<BreadcrumbItem>Components</BreadcrumbItem>&ndash;&gt;-->
+                <!--&lt;!&ndash;<BreadcrumbItem>Layout</BreadcrumbItem>&ndash;&gt;-->
+              <!--&lt;!&ndash;</Breadcrumb>&ndash;&gt;-->
+              <!--<Content :style="{ padding: '0 50px' }" class="main-wrapper">-->
+                <!--&lt;!&ndash;<Card class="contents"> &ndash;&gt;-->
+                  <!--<router-view />-->
+                <!--&lt;!&ndash;</Card>&ndash;&gt;-->
+              <!--</Content>-->
+            <!--</Layout>-->
+          <!--</Layout>-->
+        <!--</Layout>-->
         <Content :style="{padding: '0 50px'}">
-          <Card class="content">
-          <router-view/>
-          </Card>
+        <Card class="content">
+        <router-view/>
+        </Card>
         </Content>
-        <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+        <!--<Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>-->
       </Layout>
     </div>
   </div>
@@ -77,7 +127,6 @@ export default {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  min-height: 100vh;
 }
 .layout-logo {
   width: 100px;
@@ -99,11 +148,10 @@ export default {
 }
 
 .content {
-  margin: 20px 0;
   background: transparent;
   border: 0;
-  min-height: 80%;
-  min-height: 80vh;
+  /*min-height: 100%;*/
+  /*min-height: 100vh;*/
   &:hover {
     border: 0;
     box-shadow: 0 0 0;
@@ -112,9 +160,18 @@ export default {
 .ivu-card-body {
   overflow-x: auto;
 }
-  li ul{
-    /*list-style: none;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
+li ul {
+  /*list-style: none;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+}
+  .main{
+    position: relative;
+  }
+  .content-wrapper{
+    margin: 0;
+  }
+  .main-wrapper{
+    margin:40px 0;
   }
 </style>
