@@ -13,18 +13,24 @@
             <template slot="title">
               {{ item.label }}
             </template>
-            <MenuItem
-              v-for="val in item.children"
-              :key="val.id"
-              :name="val.id"
-              >{{ val.label }}</MenuItem
-            >
+            <MenuItem v-for="val in item.children" :key="val.id" :name="val.id"
+              >{{ val.label }}
+            </MenuItem>
           </Submenu>
         </Menu>
       </Sider>
 
       <Layout :style="{ padding: '0 24px 24px' }" class="main">
         <Content :style="{ padding: '0 50px' }" class="main-wrapper">
+          <p class="search-wrapper">
+            <Input
+              search
+              enter-button
+              v-model="searchVal"
+              placeholder="输入名字"
+              @on-change="search"
+            />
+          </p>
           <ul>
             <IconList v-for="item in iconList" :icon="item" :key="item.id" />
           </ul>
@@ -40,14 +46,26 @@ export default {
   data() {
     return {
       iconList: [],
-      menu: []
+      menu: [],
+      searchVal: "",
+      activeId: null
     };
   },
   methods: {
+    // 按钮切换
     menuChange(e) {
-      let id = isNaN(e) ? "none":e;
+      this.activeId = isNaN(e) ? "none" : e;
+      this.searchVal = "";
+      this.getSearch();
+    },
+    // 搜索
+    search() {
+      this.getSearch();
+    },
+    getSearch() {
       search({
-        id: id
+        id: this.activeId,
+        search: this.searchVal
       }).then(res => {
         this.iconList = res;
       });
@@ -56,9 +74,6 @@ export default {
   components: { IconList },
 
   created() {
-    search().then(res => {
-      this.iconList = res;
-    });
     getClassify()
       .then(res => {
         this.menu = res;
@@ -67,11 +82,17 @@ export default {
       .catch(err => {
         console.log(err);
       });
+    this.getSearch();
   }
 };
 </script>
 <style scoped type="text/less" lang="less">
 .main {
   margin: 40px 0;
+}
+.search-wrapper {
+  width: 50%;
+  margin: 20px 10px;
+  text-align: center;
 }
 </style>

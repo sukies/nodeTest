@@ -14,7 +14,7 @@ axios
   .interceptors
   .request
   .use(config => {
-    config.url ='http://localhost:3000'+config.url
+    config.url ='http://10.1.87.105:3000'+config.url
     console.log(config.url)
     return config
   }, error => {

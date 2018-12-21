@@ -16,20 +16,20 @@
                   List
                 </MenuItem>
               </router-link>
-              <router-link to="/upload">
-                <MenuItem name="2">
-                  <Icon type="ios-keypad"></Icon>
-                  Upload
-                </MenuItem>
-              </router-link>
-              <router-link to="/edit">
-                <MenuItem name="3">
-                  <Icon type="ios-analytics"></Icon>
-                  Edit
-                </MenuItem>
-              </router-link>
+              <!--<router-link to="/upload">-->
+                <!--<MenuItem name="2">-->
+                  <!--<Icon type="ios-keypad"></Icon>-->
+                  <!--Upload-->
+                <!--</MenuItem>-->
+              <!--</router-link>-->
+              <!--<router-link to="/edit">-->
+                <!--<MenuItem name="3">-->
+                  <!--<Icon type="ios-analytics"></Icon>-->
+                  <!--Edit-->
+                <!--</MenuItem>-->
+              <!--</router-link>-->
               <router-link to="/add">
-                <MenuItem name="4">
+                <MenuItem name="2">
                   <Icon type="ios-paper"></Icon>
                   Add Icon
                 </MenuItem>

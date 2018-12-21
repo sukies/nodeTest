@@ -52,8 +52,20 @@ router.get("/addIcon", (req, res, next) => {
 router.get("/search", (req, res, next) => {
   let params = URL.parse(req.url, true).query;
   //SQL语句
-    console.log(params.id,isNaN(params.id))
-  let search =isNaN(params.id)?"SELECT * FROM icon_list":`SELECT * FROM icon_list where classify=${params.id}`;
+  // console.log(params);
+  // console.log(params.id, isNaN(params.id), params.search);
+
+  let search = `SELECT * FROM icon_list ${
+    isNaN(params.id) ? "" : " where classify=" + params.id
+  }
+    ${
+      !!params.search
+        ? (isNaN(params.id) ? "and " : "where ") +
+          " name LIKE '%" +
+          params.search +
+          "%'"
+        : ""
+    }`;
   connection.query(search, (err, result) => {
     if (err) {
       console.log("[SELECT ERROR] - ", err.message);

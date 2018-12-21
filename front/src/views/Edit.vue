@@ -1,11 +1,10 @@
 <template>
-    <div>
-        edit
-    </div>
+  <div>edit</div>
 </template>
 <script>
 import IconList from "../components/IconList";
 import { iconList } from "../data";
+import axios from "../units/axios";
 export default {
   data() {
     return {
@@ -15,8 +14,8 @@ export default {
   methods: {},
   components: { IconList },
 
-  created() {}
+  created() {
+  }
 };
 </script>
-<style scoped type="text/less" lang="less">
-</style>
+<style scoped type="text/less" lang="less"></style>
